@@ -96,11 +96,11 @@ theme_mode: dark # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://avatars.githubusercontent.com/u/170011502?s=256&v=4
+avatar: https://raw.githubusercontent.com/Real-UserAgent/real-useragent.github.io/refs/heads/main/.github/avatar-realuseragent-min.png
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
-social_preview_image: https://repository-images.githubusercontent.com/801572881/f81dfc3d-6940-4b12-bd54-a5572228bf4c # string, local or CORS resources
+social_preview_image: https://raw.githubusercontent.com/Real-UserAgent/real-useragent.github.io/refs/heads/main/.github/fc9cd745-5228-4624-9a2c-3d7576942b6e-min.png # string, local or CORS resources
 
 # boolean type, the global switch for TOC in posts.
 toc: true
