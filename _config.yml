@@ -14,16 +14,16 @@ timezone: America/New_York
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: UserAgenter # the main title
+title: real user agent # the main title
 
 tagline: Generated Random User Agent in Python # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  Generated Random User Agent Without Repeat and Scrap Proxy (Auto update).
+  Generated Random User Agent with real useragent library python.
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
-url: "https://useragenter.github.io"
+url: "https://real-useragent.github.io"
 
 github:
   username: Pymmdrza # change to your github username
