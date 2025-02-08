@@ -1,29 +1,23 @@
 ---
-title: Generated Random android User Agent
+title: Random User Agent from Browser Name
 description: >-
-  A simple Python library to generate random Android user agents for various browsers, including Chrome.
+  Generated random real user agent on python with real-useragent library.
 author: PyMmdrza
-date: 2024-05-16 05:43:16 +0800
-categories: [Tutorial, android]
-tags: [python, user agent, web scraping, automation, testing, android, chrome, library, development]
+date: 2025-02-07 05:43:16 +0800
+categories: [Tutorial, browser]
+tags: [python, user agent, web scraping, automation, testing, chrome, library, development]
 pin: false
 ---
 
-## Generated Random Android User Agent with (UserAgenter)
+## Random User Agent from Browser Name
 
-In today's web environment, having the ability to dynamically generate random user agents can be crucial for a variety of applications, from web scraping to automated testing. UserAgenter is a Python library designed to create random user agents easily and efficiently. This tool is particularly useful for developers who need to simulate different browsing environments to test the robustness and reliability of their web applications.
-
-UserAgenter focuses on generating Android user agents to mimic mobile browsing. By leveraging this library, developers can ensure that their applications behave consistently across different devices and browsers. Below is an example of how to create an agent using UserAgenter with a Chrome browser:
-
+Generated random real user agent on python with real-useragent library
 
 ```python
-from UserAgenter import UserAgent
-
-# User Agent Class
+from real_useragent import UserAgent
 ua = UserAgent()
-
-# Android User Agent 
-random_android_agent = ua.RandomAndroidAgent()
+mobile_firefox_ua = ua.get_useragent(mode="mobile", browser="firefox")
+desktop_chrome_ua = ua.get_useragent(mode="desktop", browser="chrome")
 ```
 
 ---
