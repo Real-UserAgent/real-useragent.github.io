@@ -22,6 +22,6 @@ desktop_chrome_ua = ua.get_useragent(mode="desktop", browser="chrome")
 
 ---
 
-[generate-android-useragent]: https://github.com/useragenter/generate-android-useragent
+[generate-android-useragent]: https://github.com/real-useragenr/generate-random-useragent-from-browser
 
 
