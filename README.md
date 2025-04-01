@@ -1,171 +1,103 @@
-# UserAgenter
+# Real User Agent Generator
 
-![User Agenter Generated User agent and scrap New Proxy](https://avatars.githubusercontent.com/u/170011502?s=200&v=4 'User Agenter Generated User agent and scrap New Proxy')
 
-## Generated Random User Agent Without Repeat and Scrap Proxy (Auto update)
+Real User Agent With Auto Sync in Requests Module.
 
-generated random user agent for any web browser and os `firefox` , `chrome` , `edge`, `opera` and `safari` & `android`
 
-Scrap New Update Proxy with `http`, `socks4` and `sock5` type . all proxy address auto update per hour after request.
-
-all proxy list use : [ProxyScraper/ProxyScraper](https://github.com/ProxyScraper/ProxyScraper 'proxy scraper')
-
----
-
-### Install With PIP
-
-Windows :
+## Installation
 
 ```bash
-pip install UserAgenter
+pip install real-useragent
 ```
 
-Linux & Mac :
+## Usage
 
-```bash
-pip3 install UserAgenter
+Random User Agent on Any Device with any Browser Type (Recommended)
+
+```python
+import requests
+import real_useragent
+
+s = requests.Session()
+print(s.headers['User-Agent'])
+
+# Without a session
+resp = requests.get('https://httpbin.org/user-agent')
+print(resp.json()['user-agent'])
 ```
+
+- UserAgent
+
+```python
+from real_useragent import UserAgent
+ua = UserAgent()
+random_useragent = ua.random_useragent()
+```
+
+### Random User Agent from Browser Name:
+
+```python
+from real_useragent import UserAgent
+ua = UserAgent()
+chrome_useragent = ua.chrome_useragent()
+firefox_useragent = ua.firefox_useragent()
+desktop_useragent = ua.desktop_useragent()
+mobile_useragent = ua.mobile_useragent()
+safari_useragent = ua.safari_useragent()
+```
+
+### Random User Agent from Device Type and Browser :
+
+```python
+from real_useragent import UserAgent
+ua = UserAgent()
+mobile_firefox_ua = ua.get_useragent(mode="mobile", browser="firefox")
+desktop_chrome_ua = ua.get_useragent(mode="desktop", browser="chrome")
+```
+### Random User Agent for Device Type (`mode`)
+
+```python
+from real_useragent import UserAgent
+ua = UserAgent()
+# mode : [desktop or mobile]
+desktop_useragent = ua.get_useragent(mode="desktop")
+mobile_useragent = ua.get_useragent(mode="mobile")
+```
+- Desktop
+
+```python
+from real_useragent import UserAgent
+ua = UserAgent()
+desktop_firefox_useragent = ua.desktop_firefox_useragent()
+desktop_chrome_useragent = ua.desktop_chrome_useragent()
+desktop_linux_useragent = ua.desktop_linux_useragent()
+desktop_mac_useragent = ua.desktop_mac_useragent()
+```
+
+- Mobile :
+
+```python
+from real_useragent import UserAgent
+ua = UserAgent()
+mobile_chrome_useragent = ua.mobile_chrome_useragent()
+mobile_firefox_useragent = ua.mobile_firefox_useragent()
+mobile_safari_useragent = ua.mobile_safari_useragent()
+```
+
+
+User Agents are Randomized Per-Session or Per-Request. Individual HTTP requests without a session will each have a random User-Agent selected from the list in [desktop_useragent.txt](https://github.com/UserAgenter/real-useragent/blob/main/real_useragent/desktop_useragent.txt) or [mobile_useragent.txt](https://github.com/UserAgenter/real-useragent/blob/main/real_useragent/mobile_useragent.txt) all files automatically updated every 8 hours.
 
 
 ---
-### Use User Agent Generator
 
-generated random user agent any Type.
+Programmer : [@Pymmdrza](https://github.com/Pymmdrza)
 
-```python
-from UserAgenter import UserAgent
-
-# User Agent Class
-ua = UserAgent()
-
-# Generated Random User Agent 
-random_any_agent = ua.RandomAgent()
-
-```
-
-Generated Random Firefox User Agent. 
-
-```python
-from UserAgenter import UserAgent
-
-# User Agent Class
-ua = UserAgent()
-
-# Firefox User Agent
-random_firefox_agent = ua.RandomFirefoxAgent()
-
-```
-
-Generated Random Chrome User Agent. 
-
-```python
-from UserAgenter import UserAgent
-
-# User Agent Class
-ua = UserAgent()
-
-# Chrome User Agent 
-random_chrome_agent = ua.RandomChromeAgent()
-```
-
-
-Generated Random Internet Explorer (edge) User Agent. 
-
-```python
-from UserAgenter import UserAgent
-
-# User Agent Class
-ua = UserAgent()
-
-# Edge User Agent 
-random_edge_agent = ua.RandomEdgeAgent()
-```
-
-
-Generated Random Safari User Agent. 
-
-```python
-from UserAgenter import UserAgent
-
-# User Agent Class
-ua = UserAgent()
-
-# Safari User Agent 
-random_safari_agent = ua.RandomSafariAgent()
-```
-
-
-Generated Random Android User Agent. 
-
-```python
-from UserAgenter import UserAgent
-
-# User Agent Class
-ua = UserAgent()
-
-# Android User Agent 
-random_android_agent = ua.RandomAndroidAgent()
-```
-
-Generated Random Opera User Agent. 
-
-```python
-from UserAgenter import UserAgent
-
-# User Agent Class
-ua = UserAgent()
-
-# Opera User Agent 
-random_opera_agent = ua.RandomOperaAgent()
-```
+Credit : [Mmdrza.Com](https://mmdrza.com)
 
 ---
 
-#### Generated Random User Agent for firefox , chrome , safari , opera , edge and android 
+# Donate
 
-```python
-from UserAgenter import UserAgent
-# class for generate random user agent
-agent = UserAgent()
-# firefox user agent
-firefox = agent.RandomAgent(browser="firefox")
-# chrome user agent
-chrome = agent.RandomAgent(browser="chrome")
-# safari user agent
-safari = agent.RandomAgent(browser="safari")
-# opera user agent
-opera = agent.RandomAgent(browser="opera")
-# edge user agent
-edge = agent.RandomAgent(browser="edge")
-# android user agent
-android = agent.RandomAgent("android")
-```
+Donate with Bitcoin: `1MMDRZA12xdBLD1P5AfEfvEMErp588vmF9`
 
 
-### Use Proxy
-
-scrap Random New Proxy
-
-```python
-from useragenter import Proxy
-
-proxy_instance = Proxy()
-
-# random proxy any type
-random_proxy = proxy_instance.random_proxy()
-print("Random Proxy:", random_proxy)
-
-# proxy http type
-proxy_list = proxy_instance.get_proxies()
-print("Proxy List (http):", proxy_list)
-# proxy socks4 type
-socks4_proxies = proxy_instance.get_proxies('socks4')
-print("Proxy List (socks4):", socks4_proxies)
-# proxy socks5 type
-socks5_proxies = proxy_instance.get_proxies('socks5')
-print("Proxy List (socks5):", socks5_proxies)
-```
-
-Programmer and owner : [Pymmdrza](https://github.com/Pymmdrza)
-
-Website : [Mmdrza.Com](https://mmdrza.com)
